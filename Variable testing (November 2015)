@@ -1,0 +1,16 @@
+
+#include <stdio.h>
+
+int main() {
+  int a = 3;
+  int b = 7;
+  int c = 6;
+  int d = 2;
+  int e = 90;
+  int sum;
+  
+  sum = a + b + b - 45 + d;
+
+  printf("The equation is equal to %f.", sum);
+  return 0;
+}
