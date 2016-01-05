@@ -1,0 +1,24 @@
+// Pin Numbers!
+
+const int VRx_pin = 0; // Analog pin A0 connected X to output
+const int VRy_pin = 1; // Analog pin A1 connected Y to output
+const int SW_pin = 2; // Analog pin A0 connected X to output
+
+void setup () {
+ pinMode(SW_pin, INPUT);
+ digitalWrite(SW_pin, HIGH);
+ Serial.begin(115200);
+}
+
+void loop () {
+  Serial.print("Switch: ");
+  Serial.print(digitalRead(SW_pin));
+  Serial.print("\n");
+  Serial.print("X-axis: ");
+  Serial.print(analogRead(VRx_pin));
+  Serial.print("\n");
+  Serial.print("Y-axis: ");
+  Serial.println (analogRead(VRy_pin));
+  Serial.print("\n\n");
+  delay(500);
+}
