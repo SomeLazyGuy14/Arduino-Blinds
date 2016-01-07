@@ -1,0 +1,206 @@
+Arduino programs can be divided in three main parts: structure, values (variables and constants), and functions.
+
+Structure
+
+setup()
+loop()
+Control Structures
+
+if
+if...else
+for
+switch case
+while
+do... while
+break
+continue
+return
+goto
+Further Syntax
+
+; (semicolon)
+{} (curly braces)
+// (single line comment)
+/* */ (multi-line comment)
+#define
+#include
+Arithmetic Operators
+
+= (assignment operator)
++  (addition)
+- (subtraction)
+* (multiplication)
+/ (division)
+% (modulo)
+Comparison Operators
+
+== (equal to)
+!= (not equal to)
+< (less than)
+> (greater than)
+<= (less than or equal to)
+>= (greater than or equal to)
+Boolean Operators
+
+&& (and)
+|| (or)
+! (not)
+Pointer Access Operators
+
+* dereference operator
+& reference operator
+Bitwise Operators
+
+& (bitwise and)
+| (bitwise or)
+^ (bitwise xor)
+~ (bitwise not)
+<< (bitshift left)
+>> (bitshift right)
+Compound Operators
+
+++ (increment)
+-- (decrement)
++= (compound addition)
+-= (compound subtraction)
+*= (compound multiplication)
+/= (compound division)
+%= (compound modulo)
+&= (compound bitwise and)
+|= (compound bitwise or)
+Variables
+
+Constants
+
+HIGH | LOW
+INPUT | OUTPUT | INPUT_PULLUP
+LED_BUILTIN
+true | false
+integer constants
+floating point constants
+Data Types
+
+void
+boolean
+char
+unsigned char
+byte
+int
+unsigned int
+word
+long
+unsigned long
+short
+float
+double
+string - char array
+String - object
+array
+Conversion
+
+char()
+byte()
+int()
+word()
+long()
+float()
+Variable Scope & Qualifiers
+
+variable scope
+static
+volatile
+const
+Utilities
+
+sizeof()
+PROGMEM
+Functions
+
+Digital I/O
+
+pinMode()
+digitalWrite()
+digitalRead()
+Analog I/O
+
+analogReference()
+analogRead()
+analogWrite() - PWM
+Due & Zero only
+
+analogReadResolution()
+analogWriteResolution()
+Advanced I/O
+
+tone()
+noTone()
+shiftOut()
+shiftIn()
+pulseIn()
+Time
+
+millis()
+micros()
+delay()
+delayMicroseconds()
+Math
+
+min()
+max()
+abs()
+constrain()
+map()
+pow()
+sqrt()
+Trigonometry
+
+sin()
+cos()
+tan()
+Characters
+
+isAlphaNumeric()
+isAlpha()
+isAscii()
+isWhitespace()
+isControl()
+isDigit()
+isGraph()
+isLowerCase()
+isPrintable()
+isPunct()
+isSpace()
+isUpperCase()
+isHexadecimalDigit()
+Random Numbers
+
+randomSeed()
+random()
+Bits and Bytes
+
+lowByte()
+highByte()
+bitRead()
+bitWrite()
+bitSet()
+bitClear()
+bit()
+External Interrupts
+
+attachInterrupt()
+detachInterrupt()
+Interrupts
+
+interrupts()
+noInterrupts()
+Communication
+
+Serial
+Stream
+USB (32u4 based boards and Due/Zero only)
+
+Keyboard
+Mouse
+Looking for something else?
+
+See the libraries page for interfacing with particular types of hardware. Try the list of community-contributed code. The Arduino language is based on C/C++. It links against AVR Libc and allows the use of any of its functions; see its user manual for details.
