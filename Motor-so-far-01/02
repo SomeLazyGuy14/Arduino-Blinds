@@ -1,0 +1,72 @@
+
+/*
+ Stepper Motor Controller
+ language: Wiring/Arduino
+
+ This program drives a unipolar or bipolar stepper motor.
+ The motor is attached to digital pins 8 and 9 of the Arduino.
+
+ The motor moves 100 steps in one direction, then 100 in the other.
+
+ Created 11 Mar. 2007
+ Modified 7 Apr. 2007
+ by Tom Igoe
+
+ */
+
+// define the pins that the motor is attached to. You can use
+// any digital I/O pins.
+
+#include <Stepper.h>
+
+#define motorSteps 200     // change this depending on the number of steps
+                           // per revolution of your motor
+#define motorPin1 8
+#define motorPin2 9
+#define motorPin3 10
+#define motorPin4 11
+const int VRx_pin = 0; // Analog pin A0 connected X to output
+const int VRy_pin = 1; // Analog pin A1 connected Y to output
+const int SW_pin = 2; // Analog pin A0 connected X to output
+
+// initialize of the Stepper library:
+Stepper myStepper(motorSteps, motorPin1,motorPin2,motorPin3,motorPin4);; 
+
+void setup() {
+  // set the motor speed at 60 RPMS:
+  myStepper.setSpeed(60);
+
+  // Initialize the Serial port:
+  Serial.begin(9600);
+  pinMode(SW_pin, INPUT);
+  digitalWrite(SW_pin, HIGH);
+  Serial.begin(115200);
+
+}
+
+void loop() {
+    
+    Serial.print("Switch: ");             //the name switch appears on the serial monitor
+    Serial.print(digitalRead(SW_pin));    //shows the switch on the serial monitor
+    Serial.print("\n");
+    Serial.print("X-axis: ");             //the name X-axis appears on the serial monitor
+    Serial.print(analogRead(VRx_pin));    //shows the X coordonate on the serial monitor
+    Serial.print("\n");
+    Serial.print("Y-axis: ");             //the name Y-Axis appears on the serial monitor
+    Serial.println(analogRead(VRy_pin));  //shows the Y coordonate on the serial monitor
+    Serial.print("\n");
+    delay(100);
+  
+    if (analogRead(VRy_pin) < 450){  //If the analog stick is pushed down
+        // Step forward 100 steps:
+        Serial.println("Forward");
+        myStepper.step(100);
+        delay(500);
+    }
+    else if (analogRead(VRy_pin) > 550){  //If the analog stick is pushed up    
+        // Step backward 100 steps:
+        Serial.println("Backward");
+        myStepper.step(100);
+        delay(500); 
+     }
+}
