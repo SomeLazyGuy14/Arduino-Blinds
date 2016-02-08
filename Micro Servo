@@ -28,14 +28,3 @@ void loop () {
   Serial.println(analogRead(VRy_pin));
   Serial.print("\n\n");
   delay(500);
-  
-  if (analogRead(VRy_pin) < 450){
-
-  myservo.write(pos);
-  pos -= 10;
-}
-  else if (analogRead(VRy_pin) > 550){
-
-  myservo.write(pos);
-  pos += 10;}
-}
